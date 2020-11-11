@@ -14,6 +14,7 @@ namespace QuickBuy.Repositorio.Config
             builder.Property(u => u.Senha).IsRequired().HasMaxLength(500);
             builder.Property(u => u.Nome).IsRequired().HasMaxLength(30);
             builder.Property(u => u.SobreNome).IsRequired().HasMaxLength(30);
+            builder.HasMany(u => u.Pedidos).WithOne(p => p.Usuario);   /* Configuração de relacionamento entre Usuário -> Pedido. */
         }
     }
 }
